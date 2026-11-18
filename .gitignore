@@ -1,0 +1,8 @@
+build/
+release/
+nexus/
+package/SKSE/Plugins/*.dll
+*.obj
+*.exp
+*.lib
+*.pdb
