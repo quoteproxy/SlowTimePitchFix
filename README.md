@@ -67,7 +67,7 @@ fPlayerSpeedMult=-1     ; -1 = keep game value (0.6), 1.0 = normal speed, 0.05 -
 | 1.5.97, VR | Not supported |
 
 - No ESP, no scripts, and nothing is written to your save. You can install or remove it at any time.
-- Works with any Slow Time source: the vanilla shout, time rings, and time stop mods.
+- Works with any source of slowed time: the vanilla Slow Time shout and any mod that slows or stops time (rings, powers, hotkeys, ...).
 - If another plugin has already modified the same instruction, this plugin leaves it alone and says so in the log.
 
 ## Log
