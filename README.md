@@ -1,5 +1,7 @@
 # Slow Time Pitch Fix
 
+![Slow Time Pitch Fix: in vanilla, while the world runs at 5%, the gamepad right stick looks up and down at 5% speed; with this plugin up/down is at normal speed, like left/right](docs/images/hero.png)
+
 An SKSE plugin for Skyrim Special Edition / Anniversary Edition. It fixes a bug in the base game: while time is slowed, the gamepad right stick looks up and down extremely slowly. Left and right turning is not affected. The plugin can also set how fast the player moves during Slow Time.
 
 ## The problem
@@ -10,7 +12,11 @@ Any Slow Time effect triggers the bug. That includes the Slow Time shout and mod
 - Right stick up/down: slowed by the same factor as the world. At 5% world speed, vertical look runs at 5% speed. With "time stop" effects it is effectively frozen.
 - Mouse look is not affected.
 
+![Chart: as world speed drops from 100% to 5%, vanilla right stick up/down speed drops with it to 5%; with this plugin it stays at 100%](docs/images/speed.png)
+
 ## Cause
+
+![How it works: the gamepad look code normalizes up/down with the game-time frame delta (ID 410199); the plugin changes that one instruction to read the real-time frame delta (ID 410200), and only if exactly one matching instruction is found](docs/images/how.png)
 
 This was found by reverse engineering `SkyrimSE.exe` 1.7.104.
 
@@ -32,6 +38,8 @@ The plugin changes that one instruction (`minss xmm0, [rip+disp32]`) so it reads
 - The patch is applied only if exactly one matching instruction is found inside that function. Otherwise nothing is changed and the reason is logged.
 
 ## Optional: player speed during Slow Time
+
+![Player speed during Slow Time: the world at 5%, the player at 60% with the game value 0.6, and at 100% with fPlayerSpeedMult=1.0](docs/images/player_speed.png)
 
 Slow Time effects slow the player down as well. The player speed is the game setting `fVATSPlayerMagicTimeSlowdownMult`. `Skyrim.esm` sets it to `0.6`, and it does not depend on how strongly the world is slowed.
 
