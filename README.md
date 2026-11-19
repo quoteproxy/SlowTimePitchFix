@@ -1,5 +1,9 @@
 # Slow Time Pitch Fix
 
+<a href="https://www.nexusmods.com/skyrimspecialedition/mods/199647"><img src="https://img.shields.io/badge/download-Nexus_Mods-D98F40" alt="Download on Nexus Mods"></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/quoteproxy/SlowTimePitchFix" alt="MIT license"></a>
+<a href="https://buymeacoffee.com/quoteproxy"><img src="https://img.shields.io/badge/Buy_me_a_coffee-FFDD00?logo=buymeacoffee&logoColor=000" alt="Support on Buy Me a Coffee"></a>
+
 ![Slow Time Pitch Fix: in vanilla, while the world runs at 5%, the gamepad right stick looks up and down at 5% speed; with this plugin up/down is at normal speed, like left/right](docs/images/hero.png)
 
 An SKSE plugin for Skyrim Special Edition / Anniversary Edition. It fixes a bug in the base game: while time is slowed, the gamepad right stick looks up and down extremely slowly. Left and right turning is not affected. The plugin can also set how fast the player moves during Slow Time.
